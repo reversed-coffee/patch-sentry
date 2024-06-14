@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<config>
+	<section name="System Access">
+		<policy name="MinimumPasswordAge">
+			<remarks>The amount of time required until a new password can be set</remarks>
+			<type>SecpolNumber</type>
+		</policy>
+		<policy name="MaximumPasswordAge">
+			<remarks>The amount of time before a password must be changed</remarks>
+			<type>SecpolNumber</type>
+		</policy>
+		<policy name="MinimumPasswordLength">
+			<remarks>The minimum length of a password</remarks>
+			<type>SecpolNumber</type>
+		</policy>
+		<policy name="PasswordComplexity">
+			<remarks>Password must meet complexity requirements</remarks>
+			<type>SecpolBool</type>
+		</policy>
+		<policy name="PasswordHistorySize">
+			<remarks>Remember {value} passwords</remarks>
+			<type>SecpolNumber</type>
+		</policy>
+		<policy name="LockoutBadCount">
+			<remarks>Lock out accounts after {RawValue} failed login(s)</remarks>
+			<type>SecpolNumber</type>
+		</policy>
+		<policy name="ResetLockoutCount">
+			<remarks>Reset account lockout after {RawValue} minutes</remarks>
+			<type>SecpolNumber</type>
+		</policy>
+		<policy Name="LockoutDuration">
+			<remarks>Accounts will remained locked out for {RawValue} minutes</remarks>
+			<type>SecpolNumber</type>
+		</policy>
+		<policy name="AllowAdministratorLockout">
+			<remarks>Allow administrator accounts to be locked out</remarks>
+			<type>SecpolBool</type>
+		</policy>
+		<policy name="RequireLogonToChangePassword">
+			<remarks>Require users to log on before changing their password</remarks>
+			<type>SecpolBool</type>
+		</policy>
+		<policy name="ForceLogoffWhenHourExpire">
+			<remarks>Log users off when their time expires</remarks>
+			<type>SecpolBool</type>
+		</policy>
+		<policy name="NewAdministratorName">
+			<remarks>Administrator account name</remarks>
+			<type>SecpolString</type>
+		</policy>
+		<policy name="NewGuestName">
+			<remarks>Guest account name</remarks>
+			<type>SecpolString</type>
+		</policy>
+		<policy name="ClearTextPassword">
+			<remarks>Use reversible encryption for passwords</remarks>
+			<type>SecpolBool</type>
+		</policy>
+		<policy name="LSAAnonymousNameLookup">
+			<remarks>Prohibit anonymous enumeration of SAM accounts</remarks>
+			<type>SecpolBool</type>
+		</policy>
+		<policy name="EnableAdminAccount">
+			<remarks>Enable the built-in Administrator account</remarks>
+			<type>SecpolBool</type>
+		</policy>
+		<policy name="EnableGuestAccount">
+			<remarks>Enable the built-in Guest account</remarks>
+			<type>SecpolBool</type>
+		</policy>
+	</section>
+	<section name="Event Audit">
+		<policy name="*">
+			<remarks>Log event {Name}</remarks>
+			<type>SecpolAudit</type>
+		</policy>
+	</section>
+	<section name="Registry Values">
+		<policy name="*">
+			<remarks>Registry value</remarks>
+			<type>SecpolRegistry</type>
+		</policy>
+	</section>
+	<section name="Privilege Rights">
+		<policy name="*">
+			<remarks>Privilege {Name}</remarks>
+			<type>SecpolPrivilege</type>
+		</policy>
+	</section>
+</config>
